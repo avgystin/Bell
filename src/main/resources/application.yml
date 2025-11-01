@@ -9,7 +9,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: prometheus,metrics,health
+        include: metrics,health,prometheus
 
 server:
   port: 12222
