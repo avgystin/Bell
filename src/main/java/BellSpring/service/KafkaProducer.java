@@ -1,6 +1,6 @@
-package Bell.BellSpring;
+package BellSpring.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -9,9 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class SpringService {
-    @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+@RequiredArgsConstructor
+public class KafkaProducer {
+
+    private final KafkaTemplate<String, Object> kafkaTemplate;
+
 
     public ResponseEntity<String> sendToKafka(String msg_id, String unixtimestamp,
                                  String method, String path) {
